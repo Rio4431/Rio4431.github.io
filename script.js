@@ -11,18 +11,7 @@ const I18N = {
     projectsKicker: 'Portfolio',
     projectsTitle: 'Selected Projects',
     projectsLead: 'Publicリポジトリの全件ではなく、用途や実装内容を説明しやすい作品だけを掲載しています。',
-    typeResearch: 'Research tool',
-    typeLab: 'Laboratory tool',
-    typeDocument: 'Document tool',
-    typeImage: 'Image tool',
-    typeDesktop: 'Desktop application',
-    openalexDesc: '研究テーマに関連する文献をOpenAlexから検索し、被引用数、出版年、Open Access、撤回状態、抄録などを確認しながら候補論文を探索するWebアプリです。',
-    molDesc: 'CAS番号からPubChemの化学物質情報を確認し、モル濃度から必要秤量値、または秤量値からモル濃度を計算する実験支援Webアプリです。',
-    pdfDesc: 'JPEG→PDF、PDFクロップ、OCR、PDF分割の4機能を、共通ナビゲーションと日本語/英語切り替えでまとめたブラウザベースのPDFツール集です。',
-    resizeDesc: '複数画像のリサイズ、写真プリセット、PNG/JPEG出力、ZIP保存に対応したシンプルなブラウザベースの画像リサイズツールです。',
-    trinaryDesc: '画像を黒・グレー・白の3クラスへ分類するPython/Tkinterデスクトップアプリです。2しきい値版Otsu法、3値ノイズ除去・モルフォロジー、バッチ処理、CSV/Excel/ZIP出力に対応します。',
     webApp: 'Web App',
-    desktopNote: 'デスクトップアプリ — ブラウザデモなし',
     aboutKicker: 'About this portfolio',
     aboutTitle: '公開リポジトリとは分けて、見せたい作品だけを掲載。',
     aboutText: 'このページはGitHubの全Publicリポジトリ一覧ではなく、ポートフォリオとして選んだプロジェクトだけを紹介するための入口です。各作品では、概要、使用技術、実際に動くWebアプリ、ソースコードへのリンクを確認できます。'
@@ -37,18 +26,7 @@ const I18N = {
     projectsKicker: 'Portfolio',
     projectsTitle: 'Selected Projects',
     projectsLead: 'This page is intentionally curated. It presents selected projects rather than every public repository on my GitHub account.',
-    typeResearch: 'Research tool',
-    typeLab: 'Laboratory tool',
-    typeDocument: 'Document tool',
-    typeImage: 'Image tool',
-    typeDesktop: 'Desktop application',
-    openalexDesc: 'A literature-discovery web app that searches OpenAlex and helps review candidate papers using citation counts, publication year, Open Access status, retraction status, and abstracts.',
-    molDesc: 'A laboratory calculation web app that looks up compound information from PubChem by CAS Registry Number and converts between molar concentration and required reagent mass.',
-    pdfDesc: 'A browser-based PDF utility suite combining JPEG-to-PDF conversion, PDF cropping, OCR, and PDF splitting under shared navigation and bilingual UI.',
-    resizeDesc: 'A lightweight browser-based image resizer supporting multiple images, photo presets, PNG/JPEG output, and ZIP download.',
-    trinaryDesc: 'A Python/Tkinter desktop application that classifies grayscale images into black, gray, and white classes, with two-threshold Otsu, trinary denoising and morphology, batch processing, and CSV/Excel/ZIP export.',
     webApp: 'Web App',
-    desktopNote: 'Desktop application — no browser demo',
     aboutKicker: 'About this portfolio',
     aboutTitle: 'A curated portfolio, separate from the full list of public repositories.',
     aboutText: 'This site is a focused entry point for selected portfolio projects rather than an automatic listing of every public GitHub repository. Each project includes a summary, technologies used, a live web-app link when available, and a source-code link.'
@@ -56,6 +34,86 @@ const I18N = {
 };
 
 let language = localStorage.getItem(LANGUAGE_KEY) === 'en' ? 'en' : 'ja';
+
+function createExternalLink(label, href, muted = false) {
+  const link = document.createElement('a');
+  link.className = `text-link${muted ? ' muted' : ''}`;
+  link.href = href;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+
+  const labelSpan = document.createElement('span');
+  labelSpan.textContent = label;
+  const arrow = document.createElement('span');
+  arrow.setAttribute('aria-hidden', 'true');
+  arrow.textContent = '↗';
+
+  link.append(labelSpan, arrow);
+  return link;
+}
+
+function renderProjects() {
+  const grid = document.getElementById('projectGrid');
+  const projects = Array.isArray(window.PORTFOLIO_PROJECTS)
+    ? window.PORTFOLIO_PROJECTS.filter((project) => project.visible)
+    : [];
+
+  grid.replaceChildren();
+
+  projects.forEach((project, index) => {
+    const article = document.createElement('article');
+    article.className = 'project-card';
+    if (project.featured) article.classList.add('featured');
+    if (project.wide) article.classList.add('wide-card');
+
+    const topline = document.createElement('div');
+    topline.className = 'project-topline';
+
+    const type = document.createElement('span');
+    type.className = 'project-type';
+    type.textContent = project.type?.[language] || project.type?.en || '';
+
+    const number = document.createElement('span');
+    number.className = 'project-number';
+    number.textContent = String(index + 1).padStart(2, '0');
+
+    topline.append(type, number);
+
+    const title = document.createElement('h3');
+    title.textContent = project.title;
+
+    const description = document.createElement('p');
+    description.textContent = project.description?.[language] || project.description?.en || '';
+
+    const tech = document.createElement('div');
+    tech.className = 'tech';
+    tech.setAttribute('aria-label', 'Technologies');
+    (project.technologies || []).forEach((name) => {
+      const chip = document.createElement('span');
+      chip.textContent = name;
+      tech.appendChild(chip);
+    });
+
+    const links = document.createElement('div');
+    links.className = 'project-links';
+
+    if (project.webApp) {
+      links.appendChild(createExternalLink(I18N[language].webApp, project.webApp));
+    } else if (project.note) {
+      const note = document.createElement('span');
+      note.className = 'desktop-note';
+      note.textContent = project.note[language] || project.note.en || '';
+      links.appendChild(note);
+    }
+
+    if (project.github) {
+      links.appendChild(createExternalLink('GitHub', project.github, true));
+    }
+
+    article.append(topline, title, description, tech, links);
+    grid.appendChild(article);
+  });
+}
 
 function applyLanguage() {
   document.documentElement.lang = language;
@@ -66,6 +124,7 @@ function applyLanguage() {
   document.getElementById('langJa').classList.toggle('active', language === 'ja');
   document.getElementById('langEn').classList.toggle('active', language === 'en');
   document.title = 'Rio4431 | Portfolio';
+  renderProjects();
 }
 
 document.getElementById('langJa').addEventListener('click', () => {
