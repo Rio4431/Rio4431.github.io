@@ -4,7 +4,30 @@ A curated GitHub Pages portfolio for selected software projects.
 
 The site intentionally shows only projects chosen for portfolio use rather than automatically listing every public GitHub repository.
 
+## Project visibility management
+
+Portfolio entries are managed in `projects.js`.
+
+Each project has a `visible` setting:
+
+```js
+{
+  title: "Molarity Calculator",
+  visible: true,
+  // ...
+}
+```
+
+- `visible: true` — the project is shown on the portfolio.
+- `visible: false` — the project remains in `projects.js` but is hidden from the portfolio.
+
+The display order is the same as the order of entries in `projects.js`. Project numbers are generated automatically from the currently visible entries.
+
+This makes it possible to change which projects are shown to employers without deleting repositories or editing the main HTML layout.
+
 ## Included projects
+
+The current configuration includes:
 
 - OpenAlex Literature Search
 - Molarity Calculator
@@ -17,22 +40,23 @@ The site intentionally shows only projects chosen for portfolio use rather than 
 - Responsive single-page portfolio
 - Japanese / English two-button language switch
 - Project summary, technologies, live web-app link, and GitHub source link
+- Project cards generated from a single configuration file
+- `visible: true / false` control for portfolio inclusion
 - Selected-project curation independent of the full public repository list
 - No framework or build step required
 
 ## Files
 
-- `index.html` — Portfolio content and project links
+- `index.html` — Portfolio page structure
+- `projects.js` — Project list, descriptions, technologies, links, ordering, and visibility settings
 - `styles.css` — Responsive styling
-- `script.js` — Japanese / English UI switching
+- `script.js` — Project rendering and Japanese / English UI switching
 
 ## Deployment
 
-This repository is intended to be published as the GitHub Pages user site:
+This repository is published as the GitHub Pages user site:
 
 `https://rio4431.github.io/`
-
-Create the repository as `Rio4431/Rio4431.github.io`, place these files in the root of the `main` branch, and enable GitHub Pages if required.
 
 ## License
 
