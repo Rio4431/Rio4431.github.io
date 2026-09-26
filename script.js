@@ -4,32 +4,32 @@ const I18N = {
   ja: {
     navProjects: 'Projects',
     navAbout: 'About',
-    eyebrow: 'Selected software projects',
-    heroTitle: '研究・実務の小さな課題を、使えるツールに。',
-    heroLead: '画像処理、文献探索、PDF処理、実験計算など、日常の作業を簡潔にするために制作したツールから、転職用に選んだ作品を掲載しています。',
+    eyebrow: 'PORTFOLIO',
+    heroTitle: '制作したツール',
+    heroLead: '画像処理、文献探索、PDF処理、実験計算などのツールを掲載しています。',
     viewProjects: '作品を見る',
     projectsKicker: 'Portfolio',
-    projectsTitle: 'Selected Projects',
-    projectsLead: 'Publicリポジトリの全件ではなく、用途や実装内容を説明しやすい作品だけを掲載しています。',
+    projectsTitle: 'Projects',
     webApp: 'Web App',
     aboutKicker: 'About this portfolio',
-    aboutTitle: '公開リポジトリとは分けて、見せたい作品だけを掲載。',
-    aboutText: 'このページはGitHubの全Publicリポジトリ一覧ではなく、ポートフォリオとして選んだプロジェクトだけを紹介するための入口です。各作品では、概要、使用技術、実際に動くWebアプリ、ソースコードへのリンクを確認できます。'
+    aboutTitle: 'このポートフォリオについて',
+    aboutText1: 'このページはGitHubの全Publicリポジトリ一覧ではなく、ポートフォリオとして選んだプロジェクトを紹介しています。',
+    aboutText2: '各作品では、概要、使用技術、実際に動くWebアプリ、ソースコードへのリンクを確認できます。'
   },
   en: {
     navProjects: 'Projects',
     navAbout: 'About',
-    eyebrow: 'Selected software projects',
-    heroTitle: 'Turning small research and workflow problems into usable tools.',
-    heroLead: 'A curated portfolio of tools I built to simplify image processing, literature discovery, PDF workflows, laboratory calculations, and other everyday tasks.',
+    eyebrow: 'PORTFOLIO',
+    heroTitle: 'Software Projects',
+    heroLead: 'Tools for image processing, literature discovery, PDF workflows, laboratory calculations, and related tasks.',
     viewProjects: 'View projects',
     projectsKicker: 'Portfolio',
-    projectsTitle: 'Selected Projects',
-    projectsLead: 'This page is intentionally curated. It presents selected projects rather than every public repository on my GitHub account.',
+    projectsTitle: 'Projects',
     webApp: 'Web App',
     aboutKicker: 'About this portfolio',
-    aboutTitle: 'A curated portfolio, separate from the full list of public repositories.',
-    aboutText: 'This site is a focused entry point for selected portfolio projects rather than an automatic listing of every public GitHub repository. Each project includes a summary, technologies used, a live web-app link when available, and a source-code link.'
+    aboutTitle: 'About this portfolio',
+    aboutText1: 'This page presents selected projects as a portfolio rather than listing every public GitHub repository.',
+    aboutText2: 'Each project includes a summary, technologies used, a live web application when available, and a link to the source code.'
   }
 };
 
