@@ -25,9 +25,19 @@ The display order is the same as the order of entries in `projects.js`. Project 
 
 This makes it possible to change which projects are shown to employers without deleting repositories or editing the main HTML layout.
 
-## Included projects
+## Portfolio sections
 
-The current configuration includes:
+The site is organized into:
+
+- Tools
+- Data Analysis
+- Case Studies
+
+Data Analysis and Case Studies are currently placeholders and will be populated later.
+
+## Included tools
+
+The current Tools configuration includes:
 
 - OpenAlex Literature Search
 - Molarity Calculator
@@ -38,6 +48,7 @@ The current configuration includes:
 ## Features
 
 - Responsive single-page portfolio
+- Separate Tools, Data Analysis, and Case Studies sections
 - Japanese / English two-button language switch
 - Project summary, technologies, live web-app link, and GitHub source link
 - Project cards generated from a single configuration file
