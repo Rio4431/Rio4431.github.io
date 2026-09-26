@@ -46,62 +46,8 @@
         <p data-i18n="projectsLead">Publicリポジトリの全件ではなく、用途や実装内容を説明しやすい作品だけを掲載しています。</p>
       </div>
 
-      <div class="project-grid">
-        <article class="project-card featured">
-          <div class="project-topline"><span class="project-type" data-i18n="typeResearch">Research tool</span><span class="project-number">01</span></div>
-          <h3>OpenAlex Literature Search</h3>
-          <p data-i18n="openalexDesc">研究テーマに関連する文献をOpenAlexから検索し、被引用数、出版年、Open Access、撤回状態、抄録などを確認しながら候補論文を探索するWebアプリです。</p>
-          <div class="tech" aria-label="Technologies"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>OpenAlex API</span><span>localStorage</span></div>
-          <div class="project-links">
-            <a class="text-link" href="https://rio4431.github.io/openalex-literature-search/" target="_blank" rel="noopener noreferrer"><span data-i18n="webApp">Web App</span><span aria-hidden="true">↗</span></a>
-            <a class="text-link muted" href="https://github.com/Rio4431/openalex-literature-search" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-topline"><span class="project-type" data-i18n="typeLab">Laboratory tool</span><span class="project-number">02</span></div>
-          <h3>Molarity Calculator</h3>
-          <p data-i18n="molDesc">CAS番号からPubChemの化学物質情報を確認し、モル濃度から必要秤量値、または秤量値からモル濃度を計算する実験支援Webアプリです。</p>
-          <div class="tech" aria-label="Technologies"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PubChem PUG REST API</span></div>
-          <div class="project-links">
-            <a class="text-link" href="https://rio4431.github.io/mol-calculator/" target="_blank" rel="noopener noreferrer"><span data-i18n="webApp">Web App</span><span aria-hidden="true">↗</span></a>
-            <a class="text-link muted" href="https://github.com/Rio4431/mol-calculator" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-topline"><span class="project-type" data-i18n="typeDocument">Document tool</span><span class="project-number">03</span></div>
-          <h3>PDF Toolkit</h3>
-          <p data-i18n="pdfDesc">JPEG→PDF、PDFクロップ、OCR、PDF分割の4機能を、共通ナビゲーションと日本語/英語切り替えでまとめたブラウザベースのPDFツール集です。</p>
-          <div class="tech" aria-label="Technologies"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PDF.js</span><span>pdf-lib</span><span>Tesseract.js</span><span>JSZip</span></div>
-          <div class="project-links">
-            <a class="text-link" href="https://rio4431.github.io/pdf-toolkit/" target="_blank" rel="noopener noreferrer"><span data-i18n="webApp">Web App</span><span aria-hidden="true">↗</span></a>
-            <a class="text-link muted" href="https://github.com/Rio4431/pdf-toolkit" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-topline"><span class="project-type" data-i18n="typeImage">Image tool</span><span class="project-number">04</span></div>
-          <h3>Image Resizer</h3>
-          <p data-i18n="resizeDesc">複数画像のリサイズ、写真プリセット、PNG/JPEG出力、ZIP保存に対応したシンプルなブラウザベースの画像リサイズツールです。</p>
-          <div class="tech" aria-label="Technologies"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Browser APIs</span></div>
-          <div class="project-links">
-            <a class="text-link" href="https://rio4431.github.io/image-resizer/" target="_blank" rel="noopener noreferrer"><span data-i18n="webApp">Web App</span><span aria-hidden="true">↗</span></a>
-            <a class="text-link muted" href="https://github.com/Rio4431/image-resizer" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project-card wide-card">
-          <div class="project-topline"><span class="project-type" data-i18n="typeDesktop">Desktop application</span><span class="project-number">05</span></div>
-          <h3>Grayscale Trinarization Desktop App</h3>
-          <p data-i18n="trinaryDesc">画像を黒・グレー・白の3クラスへ分類するPython/Tkinterデスクトップアプリです。2しきい値版Otsu法、3値ノイズ除去・モルフォロジー、バッチ処理、CSV/Excel/ZIP出力に対応します。</p>
-          <div class="tech" aria-label="Technologies"><span>Python</span><span>Tkinter</span><span>NumPy</span><span>Pillow</span><span>openpyxl</span><span>PyInstaller</span></div>
-          <div class="project-links">
-            <span class="desktop-note" data-i18n="desktopNote">Desktop app — no browser demo</span>
-            <a class="text-link muted" href="https://github.com/Rio4431/trinary-image-app" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-      </div>
+      <div id="projectGrid" class="project-grid" aria-live="polite"></div>
+      <noscript>This portfolio requires JavaScript to display the selected projects.</noscript>
     </section>
 
     <section id="about" class="section about-section">
@@ -120,6 +66,7 @@
     </div>
   </footer>
 
+  <script src="projects.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
