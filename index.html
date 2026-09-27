@@ -58,9 +58,23 @@
           <h2>Data Analysis</h2>
         </div>
       </div>
-      <div class="empty-section">
-        <p data-i18n="dataAnalysisPlaceholder">分析事例は後日追加予定です。</p>
-      </div>
+      <article class="analysis-card">
+        <div class="project-topline">
+          <span class="project-type" data-i18n="senescenceType">Transcriptome analysis</span>
+        </div>
+        <h3 data-i18n="senescenceTitle">Cellular Senescence Transcriptome Analysis</h3>
+        <p data-i18n="senescenceDescription">ヒト皮膚線維芽細胞のNormal・Senescence・Treatment条件を比較し、老化に伴う発現変化とTreatmentによるNormal方向への変化を探索。</p>
+        <dl class="analysis-details">
+          <div><dt>Objective</dt><dd data-i18n="senescenceObjective">老化関連遺伝子とTreatmentによる回復候補を探索。</dd></div>
+          <div><dt>Data</dt><dd data-i18n="senescenceData">Private microarray expression dataset</dd></div>
+          <div><dt>Methods / Technologies</dt><dd>Python / Microarray / Fold-change analysis / GO enrichment / Fisher's exact test / FDR / Visualization</dd></div>
+          <div><dt>Analysis</dt><dd data-i18n="senescenceAnalysis">QC → 2-fold変動遺伝子抽出 → Normal方向への回復評価 → GO解析 → 候補遺伝子整理</dd></div>
+          <div><dt>Summary</dt><dd data-i18n="senescenceSummary">718遺伝子から、Normal方向へ変化した181遺伝子を抽出し、51遺伝子の強いTreatment応答サブグループを整理。</dd></div>
+        </dl>
+        <div class="project-links">
+          <a class="text-link muted" href="https://github.com/Rio4431/cellular-senescence-transcriptome-analysis" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
     </section>
 
     <section id="case-studies" class="section portfolio-category">
