@@ -128,6 +128,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
   background: rgba(255, 255, 255, .45);
 }
 .empty-section p { margin: 0; color: var(--muted); }
+.analysis-card {
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+}
+.analysis-card h3 { margin: 22px 0 0; font-size: 1.45rem; line-height: 1.25; }
+.analysis-card > p { margin: 14px 0 0; color: var(--muted); max-width: 900px; }
+.analysis-details { margin: 24px 0 0; display: grid; gap: 12px; }
+.analysis-details div { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 18px; }
+.analysis-details dt { font-weight: 800; }
+.analysis-details dd { margin: 0; color: var(--muted); }
+
 
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .project-card {
@@ -174,6 +187,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .project-grid { grid-template-columns: 1fr; }
   .project-card.wide-card { grid-column: auto; }
   .project-card { min-height: 0; }
+  .analysis-details div { grid-template-columns: 1fr; gap: 2px; }
   .about-card { padding: 28px 22px; }
   .footer-inner { padding-inline: 18px; flex-direction: column; }
 }
