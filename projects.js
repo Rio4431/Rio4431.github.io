@@ -54,6 +54,28 @@ window.PORTFOLIO_PROJECTS = [
     github: "https://github.com/Rio4431/pdf-toolkit"
   },
   {
+    id: "chatgpt-conversation-exporter",
+    visible: true,
+    featured: false,
+    wide: false,
+    title: "ChatGPT Conversation Exporter",
+    type: {
+      ja: "Chrome extension",
+      en: "Chrome extension"
+    },
+    description: {
+      ja: "ChatGPTの会話に含まれるプロンプトと回答を収集し、HTML保存と専用タブからのPDF印刷に対応するChrome拡張機能です。",
+      en: "A Chrome extension that collects prompts and responses from a ChatGPT conversation, exports an HTML copy, and opens a dedicated tab for PDF printing."
+    },
+    technologies: ["JavaScript", "Chrome Extensions", "Manifest V3", "HTML", "CSS", "MathML"],
+    webApp: null,
+    github: "https://github.com/Rio4431/chatgpt-conversation-exporter",
+    note: {
+      ja: "Chrome拡張機能 — インストールして利用",
+      en: "Chrome extension — installation required"
+    }
+  },
+  {
     id: "image-resizer",
     visible: true,
     featured: false,
