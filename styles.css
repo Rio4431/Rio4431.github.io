@@ -169,9 +169,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .desktop-note { color: var(--muted); font-size: .84rem; }
 
 .about-section { padding-top: 10px; padding-bottom: 90px; }
-.about-card { padding: 44px; border-radius: 20px; background: #292238; color: #f8f5ff; }
-.about-card .section-kicker { color: #d7c4f5; }
-.about-card > p:last-child { max-width: 820px; margin-top: 20px; color: #d6cde4; }
+.about-card { padding: 44px; border-radius: 20px; background: var(--surface-soft); color: var(--text); border: 1px solid var(--line); }
+.about-card .section-kicker { color: var(--accent); }
+.about-card > p:last-child { max-width: 820px; margin-top: 20px; color: var(--muted); }
 
 .footer { border-top: 1px solid var(--line); }
 .footer-inner { max-width: var(--max); margin: 0 auto; padding: 28px 24px 40px; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .84rem; }
