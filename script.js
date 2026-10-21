@@ -20,6 +20,8 @@ const I18N = {
     senescenceData: 'Private microarray expression dataset',
     senescenceAnalysis: 'QC → 2-fold変動遺伝子抽出 → Normal方向への回復評価 → GO解析 → 候補遺伝子整理',
     senescenceSummary: '24,351 probe setsのマイクロアレイデータから、細胞老化に伴い2倍以上変化した718遺伝子を抽出。TreatmentによるNormal方向への発現変化を評価し、181遺伝子を回復候補、うち51遺伝子を強いTreatment応答候補として整理。',
+    senescenceLimitations: '各条件1サンプル（n=1）の探索的解析であり、遺伝子ごとの統計的有意差は評価していません。発現量のNormal方向への変化は生物学的機能の回復を証明しません。',
+    senescenceReproducibility: '解析コードと依存関係はGitHubで公開。元のマイクロアレイデータは非公開のため、完全な第三者再現にはデータへのアクセス権が必要です。',
     skinAgingType: 'Gene expression analysis',
     skinAgingTitle: 'GEO Age-Associated Gene Expression Analysis',
     skinAgingDescription: '公開NCBI GEOのマイクロアレイ・bulk RNA-seqデータを用いて、年齢と特定遺伝子の発現量の関連を探索するPython Notebook。',
@@ -52,6 +54,8 @@ const I18N = {
     senescenceData: 'Private microarray expression dataset',
     senescenceAnalysis: 'QC → two-fold change filtering → recovery toward Normal → GO analysis → candidate prioritization',
     senescenceSummary: 'From 24,351 microarray probe sets, 718 genes showing at least a two-fold senescence-associated expression change were identified. Treatment-associated shifts toward the Normal expression state were evaluated, yielding 181 recovery candidates, including 51 strong Treatment-response candidates.',
+    senescenceLimitations: 'This is an exploratory analysis with one sample per condition (n=1); gene-level statistical significance was not evaluated. Shifts toward Normal expression do not establish functional recovery.',
+    senescenceReproducibility: 'Code and dependencies are available on GitHub. The source microarray dataset is private, so full independent reproduction requires authorized access.',
     skinAgingType: 'Gene expression analysis',
     skinAgingTitle: 'GEO Age-Associated Gene Expression Analysis',
     skinAgingDescription: 'A Python notebook for exploring age-associated gene expression in public NCBI GEO microarray and bulk RNA-seq datasets.',
@@ -144,7 +148,22 @@ function renderProjects() {
       links.appendChild(createExternalLink('GitHub', project.github, true));
     }
 
-    article.append(topline, title, description, tech, links);
+    article.append(topline, title, description, tech);
+    if (project.details?.[language]) {
+      const details = document.createElement('dl');
+      details.className = 'analysis-details project-details';
+      project.details[language].forEach(([label, value]) => {
+        const item = document.createElement('div');
+        const term = document.createElement('dt');
+        term.textContent = label;
+        const definition = document.createElement('dd');
+        definition.textContent = value;
+        item.append(term, definition);
+        details.appendChild(item);
+      });
+      article.appendChild(details);
+    }
+    article.appendChild(links);
     grid.appendChild(article);
   });
 }
