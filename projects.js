@@ -114,5 +114,69 @@ window.PORTFOLIO_PROJECTS = [
       ja: "デスクトップアプリ — ブラウザデモなし",
       en: "Desktop application — no browser demo"
     }
+  },
+  {
+    id: "geo-age-expression",
+    visible: true,
+    featured: false,
+    wide: true,
+    title: "GEO Age-Associated Gene Expression Analysis",
+    type: { ja: "Python / Jupyter解析ツール", en: "Python / Jupyter analysis tool" },
+    description: {
+      ja: "NCBI GEOの公開データから指定遺伝子を抽出し、年齢と発現量の関連を探索するNotebook。年齢を連続変数として扱う解析と、若年・高齢群の比較に対応します。",
+      en: "A reusable Jupyter notebook for exploring associations between age and a selected gene's expression in public NCBI GEO data, using both continuous age and age-group comparisons."
+    },
+    technologies: ["Python", "Jupyter", "GEOparse", "pandas", "SciPy", "statsmodels", "Matplotlib"],
+    details: {
+      ja: [
+        ["目的・入力", "GSE IDとNCBI Gene IDを指定して発現量と年齢情報を取得。"],
+        ["解析", "OLS回帰、Spearman相関、若年・高齢群のWelchのt検定。CSV・PNG出力。"],
+        ["検証", "データセットに応じて年齢メタデータ、対象試料、発現値の尺度を確認する必要があります。検証済みGSEの網羅的な一覧は未掲載です。"],
+        ["制約", "マイクロアレイと一部のbulk RNA-seq形式に対応。RNA-seqの探索的比較はカウントベースの差次的発現解析の代替ではありません。"],
+        ["再現方法", "公開Notebookとrequirements.txtを用意。GSE・Gene IDを設定して実行し、必要に応じて発現行列を指定します。"]
+      ],
+      en: [
+        ["Goal / input", "Set a GSE accession and NCBI Gene ID to obtain expression and age metadata."],
+        ["Methods", "OLS regression, Spearman correlation, and Welch's t-test for younger versus older groups; CSV and PNG exports."],
+        ["Verification", "Age metadata, specimen selection, and expression scale must be checked per dataset. No comprehensive list of validated GSE accessions is published."],
+        ["Limitations", "Supports microarray and selected bulk RNA-seq formats. Exploratory RNA-seq comparisons do not replace count-based differential expression analysis."],
+        ["Reproducibility", "Notebook and requirements.txt are public. Set GSE / Gene ID and provide a local expression matrix if needed."]
+      ]
+    },
+    webApp: null,
+    github: "https://github.com/Rio4431/geo-age-expression-analysis",
+    note: { ja: "Jupyter Notebook — ブラウザデモなし", en: "Jupyter Notebook — no browser demo" }
+  },
+  {
+    id: "geo-disease-expression",
+    visible: true,
+    featured: false,
+    wide: true,
+    title: "GEO Normal–Disease Gene Expression Analysis",
+    type: { ja: "Python / Jupyter解析ツール", en: "Python / Jupyter analysis tool" },
+    description: {
+      ja: "NCBI GEOデータから指定遺伝子の発現量を取得し、健常群と疾患群を探索的に比較するNotebook。メタデータからの群判定を試み、必要に応じて手動指定できます。",
+      en: "A reusable Jupyter notebook for exploratory normal-versus-disease comparisons of a selected gene in NCBI GEO datasets. It attempts metadata-based group labeling, with a manual override option."
+    },
+    technologies: ["Python", "Jupyter", "GEOparse", "pandas", "SciPy", "statsmodels", "Matplotlib"],
+    details: {
+      ja: [
+        ["目的・入力", "GSE IDとNCBI Gene IDを指定。サンプルの診断情報から群を推定し、CSVで群ラベルを上書き可能。"],
+        ["解析", "健常・疾患2群の発現比較。必要に応じて年齢・性別などの共変量を指定できます。"],
+        ["検証", "群ラベルの自動判定結果を監査用CSVで確認してから解釈します。自動分類がすべてのGSEで正しいことは保証されません。"],
+        ["制約", "比較群の定義、組織・採取条件、発現値の尺度に依存します。データセットによって追加設定や手動確認が必要です。"],
+        ["再現方法", "公開Notebookとrequirements.txtを使用。GSE・Gene IDを設定し、生成された監査ファイルを確認します。"]
+      ],
+      en: [
+        ["Goal / input", "Set GSE and NCBI Gene ID. Group labels are inferred from sample metadata when possible and can be overridden using CSV."],
+        ["Methods", "Normal-versus-disease expression comparison with optional age / sex covariates."],
+        ["Verification", "Review generated audit CSV files before interpretation; automatic group labeling is not guaranteed to be correct for every GSE."],
+        ["Limitations", "Results depend on group definitions, tissue and collection conditions, and expression scale. Some datasets require manual configuration."],
+        ["Reproducibility", "Notebook and requirements.txt are public. Configure GSE / Gene ID and inspect the generated audit files."]
+      ]
+    },
+    webApp: null,
+    github: "https://github.com/Rio4431/geo-disease-expression-analysis",
+    note: { ja: "Jupyter Notebook — ブラウザデモなし", en: "Jupyter Notebook — no browser demo" }
   }
 ];
