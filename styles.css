@@ -191,3 +191,20 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .about-card { padding: 28px 22px; }
   .footer-inner { padding-inline: 18px; flex-direction: column; }
 }
+/* Compact evidence notes for reusable notebook tools */
+.project-details {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  gap: 10px;
+}
+.project-details div {
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+}
+.project-details dt { font-size: .82rem; }
+.project-details dd { font-size: .84rem; }
+.project-card .project-links { margin-top: auto; }
+@media (max-width: 760px) {
+  .project-details div { grid-template-columns: 1fr; gap: 3px; }
+}
