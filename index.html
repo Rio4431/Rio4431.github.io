@@ -70,28 +70,14 @@
           <div><dt>Methods / Technologies</dt><dd>Python / Microarray / Fold-change analysis / GO enrichment / Fisher's exact test / FDR / Visualization</dd></div>
           <div><dt>Analysis</dt><dd data-i18n="senescenceAnalysis">QC → 2-fold変動遺伝子抽出 → Normal方向への回復評価 → GO解析 → 候補遺伝子整理</dd></div>
           <div><dt>Summary</dt><dd data-i18n="senescenceSummary">718遺伝子から、Normal方向へ変化した181遺伝子を抽出し、51遺伝子の強いTreatment応答サブグループを整理。</dd></div>
+          <div><dt>Validation / Limitations</dt><dd data-i18n="senescenceLimitations">各条件1サンプル（n=1）の探索的解析であり、遺伝子ごとの統計的有意差は評価していません。発現量のNormal方向への変化は生物学的機能の回復を証明しません。</dd></div>
+          <div><dt>Reproducibility</dt><dd data-i18n="senescenceReproducibility">解析コードと依存関係はGitHubで公開。元のマイクロアレイデータは非公開のため、完全な第三者再現にはデータへのアクセス権が必要です。</dd></div>
         </dl>
         <div class="project-links">
           <a class="text-link muted" href="https://github.com/Rio4431/cellular-senescence-transcriptome-analysis" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a>
         </div>
       </article>
-      <article class="analysis-card">
-        <div class="project-topline">
-          <span class="project-type" data-i18n="skinAgingType">Gene expression analysis</span>
-        </div>
-        <h3 data-i18n="skinAgingTitle">GEO Age-Associated Gene Expression Analysis</h3>
-        <p data-i18n="skinAgingDescription">公開NCBI GEOのマイクロアレイ・bulk RNA-seqデータを用いて、年齢と特定遺伝子の発現量の関連を探索するPython Notebook。</p>
-        <dl class="analysis-details">
-          <div><dt>Objective</dt><dd data-i18n="skinAgingObjective">任意のNCBI Gene IDを指定し、加齢と発現量の関連を探索。</dd></div>
-          <div><dt>Data</dt><dd>NCBI GEO / Microarray / bulk RNA-seq</dd></div>
-          <div><dt>Methods / Technologies</dt><dd>Python / GEOparse / pandas / RNA-seq / OLS / Spearman / Welch's t-test / Visualization</dd></div>
-          <div><dt>Analysis</dt><dd data-i18n="skinAgingAnalysis">GSE・Gene ID指定 → 発現量と年齢情報の取得 → 年齢との関連・群間差の解析 → CSV・グラフ出力</dd></div>
-          <div><dt>Summary</dt><dd data-i18n="skinAgingSummary">GSEごとのメタデータや発現量の尺度を確認しながら使用する探索的解析Notebook。</dd></div>
-        </dl>
-        <div class="project-links">
-          <a class="text-link muted" href="https://github.com/Rio4431/geo-age-expression-analysis" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a>
-        </div>
-      </article>
+
     </section>
 
     <section id="case-studies" class="section portfolio-category">
