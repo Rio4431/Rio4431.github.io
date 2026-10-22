@@ -1,4 +1,4 @@
-const LANGUAGE_KEY = 'rio4431_portfolio_language';
+const LANGUAGE_KEY = 'moriomics_portfolio_language';
 
 const I18N = {
   ja: {
@@ -176,7 +176,7 @@ function applyLanguage() {
   });
   document.getElementById('langJa').classList.toggle('active', language === 'ja');
   document.getElementById('langEn').classList.toggle('active', language === 'en');
-  document.title = 'Rio4431 | Portfolio';
+  document.title = 'moriomics | Portfolio';
   renderProjects();
 }
 
