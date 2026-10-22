@@ -1,4 +1,4 @@
-# Rio4431 Portfolio
+# moriomics Portfolio
 
 A curated GitHub Pages portfolio for selected software projects.
 
@@ -67,7 +67,7 @@ The current Tools configuration includes:
 
 This repository is published as the GitHub Pages user site:
 
-`https://rio4431.github.io/`
+`https://moriomics.github.io/`
 
 ## License
 
