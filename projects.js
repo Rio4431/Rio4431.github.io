@@ -14,8 +14,8 @@ window.PORTFOLIO_PROJECTS = [
       en: "A literature-discovery web app that searches OpenAlex and helps review candidate papers using citation counts, publication year, Open Access status, retraction status, and abstracts."
     },
     technologies: ["HTML", "CSS", "JavaScript", "OpenAlex API", "localStorage"],
-    webApp: "https://rio4431.github.io/openalex-literature-search/",
-    github: "https://github.com/Rio4431/openalex-literature-search"
+    webApp: "https://moriomics.github.io/openalex-literature-search/",
+    github: "https://github.com/moriomics/openalex-literature-search"
   },
   {
     id: "mol-calculator",
@@ -32,8 +32,8 @@ window.PORTFOLIO_PROJECTS = [
       en: "A laboratory calculation web app that looks up compound information from PubChem by CAS Registry Number and converts between molar concentration and required reagent mass."
     },
     technologies: ["HTML", "CSS", "JavaScript", "PubChem PUG REST API"],
-    webApp: "https://rio4431.github.io/mol-calculator/",
-    github: "https://github.com/Rio4431/mol-calculator"
+    webApp: "https://moriomics.github.io/mol-calculator/",
+    github: "https://github.com/moriomics/mol-calculator"
   },
   {
     id: "pdf-toolkit",
@@ -50,8 +50,8 @@ window.PORTFOLIO_PROJECTS = [
       en: "A browser-based PDF utility suite combining JPEG-to-PDF conversion, PDF cropping, OCR, and PDF splitting under shared navigation and bilingual UI."
     },
     technologies: ["HTML", "CSS", "JavaScript", "PDF.js", "pdf-lib", "Tesseract.js", "JSZip"],
-    webApp: "https://rio4431.github.io/pdf-toolkit/",
-    github: "https://github.com/Rio4431/pdf-toolkit"
+    webApp: "https://moriomics.github.io/pdf-toolkit/",
+    github: "https://github.com/moriomics/pdf-toolkit"
   },
   {
     id: "chatgpt-conversation-exporter",
@@ -69,7 +69,7 @@ window.PORTFOLIO_PROJECTS = [
     },
     technologies: ["JavaScript", "Chrome Extensions", "Manifest V3", "HTML", "CSS", "MathML"],
     webApp: null,
-    github: "https://github.com/Rio4431/chatgpt-conversation-exporter",
+    github: "https://github.com/moriomics/chatgpt-conversation-exporter",
     note: {
       ja: "Chrome拡張機能 — インストールして利用",
       en: "Chrome extension — installation required"
@@ -90,8 +90,8 @@ window.PORTFOLIO_PROJECTS = [
       en: "A lightweight browser-based image resizer supporting multiple images, photo presets, PNG/JPEG output, and ZIP download."
     },
     technologies: ["HTML", "CSS", "JavaScript", "Browser APIs"],
-    webApp: "https://rio4431.github.io/image-resizer/",
-    github: "https://github.com/Rio4431/image-resizer"
+    webApp: "https://moriomics.github.io/image-resizer/",
+    github: "https://github.com/moriomics/image-resizer"
   },
   {
     id: "trinary-image-app",
@@ -109,7 +109,7 @@ window.PORTFOLIO_PROJECTS = [
     },
     technologies: ["Python", "Tkinter", "NumPy", "Pillow", "openpyxl", "PyInstaller"],
     webApp: null,
-    github: "https://github.com/Rio4431/trinary-image-app",
+    github: "https://github.com/moriomics/trinary-image-app",
     note: {
       ja: "デスクトップアプリ — ブラウザデモなし",
       en: "Desktop application — no browser demo"
@@ -144,7 +144,7 @@ window.PORTFOLIO_PROJECTS = [
       ]
     },
     webApp: null,
-    github: "https://github.com/Rio4431/geo-age-expression-analysis",
+    github: "https://github.com/moriomics/geo-age-expression-analysis",
     note: { ja: "Jupyter Notebook — ブラウザデモなし", en: "Jupyter Notebook — no browser demo" }
   },
   {
@@ -176,7 +176,7 @@ window.PORTFOLIO_PROJECTS = [
       ]
     },
     webApp: null,
-    github: "https://github.com/Rio4431/geo-disease-expression-analysis",
+    github: "https://github.com/moriomics/geo-disease-expression-analysis",
     note: { ja: "Jupyter Notebook — ブラウザデモなし", en: "Jupyter Notebook — no browser demo" }
   }
 ];
